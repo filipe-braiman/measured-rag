@@ -44,7 +44,7 @@ flatbuffers==25.12.19
 frozenlist==1.8.0
 fsspec==2026.2.0
 googleapis-common-protos==1.72.0
-gradio==6.5.1
+gradio==6.15.1
 gradio-client==2.0.3
 greenlet==3.3.1
 groovy==0.1.2
