@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-labelledby="measured-rag-mark-title measured-rag-mark-description">
+  <title id="measured-rag-mark-title">Measured RAG</title>
+  <desc id="measured-rag-mark-description">An inspection frame surrounding three evidence passages, with the retained passage highlighted.</desc>
+
+  <path
+    d="M22 10H13C11.3431 10 10 11.3431 10 13V51C10 52.6569 11.3431 54 13 54H22"
+    stroke="#E8EDF2"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M42 10H51C52.6569 10 54 11.3431 54 13V51C54 52.6569 52.6569 54 51 54H42"
+    stroke="#E8EDF2"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <path d="M24 24H40" stroke="#E8EDF2" stroke-width="4" stroke-linecap="round" />
+  <path d="M22 32H42" stroke="#3F8F88" stroke-width="4" stroke-linecap="round" />
+  <path d="M24 40H40" stroke="#E8EDF2" stroke-width="4" stroke-linecap="round" />
+</svg>

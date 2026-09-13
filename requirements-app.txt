@@ -1,0 +1,30 @@
+# Linux amd64 / CPython 3.11 only. This is NOT the benchmark environment.
+# Pin the working application's direct dependencies; constrain their transitive
+# closure separately. Docker installs Torch from its CPU-only index first.
+# The explicit +cpu pin prevents a later resolver from replacing it with CUDA.
+-c constraints-app.txt
+torch==2.10.0+cpu
+gradio==6.5.1
+groq==0.37.1
+python-dotenv==1.2.1
+langchain==0.2.12
+langchain-community==0.2.10
+langchain-core==0.2.36
+chromadb==1.5.0
+rank-bm25==0.2.2
+sentence-transformers==5.2.2
+transformers==5.1.0
+tokenizers==0.22.2
+huggingface-hub==1.4.1
+PyMuPDF==1.26.7
+unstructured[doc,docx]==0.21.5
+python-docx==1.2.0
+spacy==3.8.11
+numpy==1.26.4
+pydantic==2.12.5
+# Chroma 1.5.0 requires PostHog <6. The host's 7.44.1 is incompatible.
+# 5.4.0 satisfies that contract; Linux integration remains a container build gate.
+posthog==5.4.0
+# Required by the installed Unstructured tokenizer, not an extra RAG model.
+# Version and hash match unstructured/nlp/tokenize.py in 0.21.5.
+en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl#sha256=1932429db727d4bff3deed6b34cfc05df17794f4a52eeb26cf8928f7c1a0fb85

@@ -1,0 +1,9 @@
+# Preserve exact file bytes, including the recorded publication-artifact hashes.
+* -text
+# Accept CRLF line endings while retaining trailing-space and indentation checks.
+* whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Media must never be treated as text or transformed during checkout.
+*.png binary
+*.pdf binary
+*.mp4 binary

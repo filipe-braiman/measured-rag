@@ -1,0 +1,210 @@
+{
+  "run_id": "qasper-publication-v1-28p",
+  "pipeline_version": "qasper-eval-pipeline-v1.6",
+  "status": "complete",
+  "path_base": "repository_root",
+  "case_selection": null,
+  "semantic_evaluation_contract": {
+    "evaluator_version": "qasper-reference-geval-v1.6",
+    "execution": "one independent provider request per annotation",
+    "selection": "maximum annotation score; first annotation wins ties",
+    "placeholder_policy": "qasper-placeholder-markup-v1",
+    "annotation_evidence_policy": {
+      "policy_version": "qasper-annotation-evidence-v1",
+      "preferred_source": "highlighted_evidence",
+      "fallback_source": "evidence",
+      "empty_source": "none",
+      "ordering": "original",
+      "usable_text": "non-empty after whitespace trimming",
+      "reference_transformation": "none",
+      "evidence_transformation": "none",
+      "empty_evidence_message": "No gold evidence was supplied."
+    },
+    "abbreviated_reference_absence_is_fabrication": false
+  },
+  "generation_profile": {
+    "profile_name": "qasper-28p-publication-v1",
+    "profile_schema_version": 1,
+    "resolved_configuration": {
+      "profile_name": "qasper-28p-publication-v1",
+      "profile_schema_version": 1,
+      "qa_data_path": "benchmarking/data/qasper_qas_seed1001_size28.json",
+      "pdf_directory": "benchmarking/data/qasper_papers_seed1001_size28",
+      "retrieval_mode": "auto",
+      "chunk_size": 600,
+      "chunk_overlap": 50,
+      "retrieval_top_n": 30,
+      "fusion_threshold": 0.15,
+      "rerank_candidate_count": 30,
+      "rerank_top_k": 10,
+      "judge_model": "qwen/qwen3.8-27b",
+      "judge_threshold": 0.7,
+      "judge_reasoning_effort": "default",
+      "judge_max_retries": 3,
+      "judge_max_completion_tokens": 2048,
+      "judge_request_interval_seconds": 6.0,
+      "judge_retry_base_delay_seconds": 2.0,
+      "judge_retry_max_delay_seconds": 60.0,
+      "judge_retry_jitter_seconds": 0.5,
+      "judge_max_retry_after_seconds": 300.0,
+      "generation_case_interval_seconds": 30.0
+    },
+    "configuration_sha256": "e611b6f1d6606a6aed01d8624d9437380ab87a865af5a7ddf80db1c5a90e5ebb",
+    "dataset_sha256": "ca391c629a520ad9aaba61c5373f8fa54729e10bae7001f451bfc730d1b24853",
+    "git_commit": "45eac4a1bcef060ad24e409b9b69d38aca8d1e5b",
+    "git_dirty": false
+  },
+  "effective_judge_profile": {
+    "profile_name": "qasper-28p-publication-v1",
+    "profile_schema_version": 1,
+    "resolved_configuration": {
+      "profile_name": "qasper-28p-publication-v1",
+      "profile_schema_version": 1,
+      "qa_data_path": "benchmarking/data/qasper_qas_seed1001_size28.json",
+      "pdf_directory": "benchmarking/data/qasper_papers_seed1001_size28",
+      "retrieval_mode": "auto",
+      "chunk_size": 600,
+      "chunk_overlap": 50,
+      "retrieval_top_n": 30,
+      "fusion_threshold": 0.15,
+      "rerank_candidate_count": 30,
+      "rerank_top_k": 10,
+      "judge_model": "qwen/qwen3.8-27b",
+      "judge_threshold": 0.7,
+      "judge_reasoning_effort": "default",
+      "judge_max_retries": 3,
+      "judge_max_completion_tokens": 2048,
+      "judge_request_interval_seconds": 6.0,
+      "judge_retry_base_delay_seconds": 2.0,
+      "judge_retry_max_delay_seconds": 60.0,
+      "judge_retry_jitter_seconds": 0.5,
+      "judge_max_retry_after_seconds": 300.0,
+      "generation_case_interval_seconds": 30.0
+    },
+    "configuration_sha256": "e611b6f1d6606a6aed01d8624d9437380ab87a865af5a7ddf80db1c5a90e5ebb",
+    "dataset_sha256": "ca391c629a520ad9aaba61c5373f8fa54729e10bae7001f451bfc730d1b24853",
+    "git_commit": "45eac4a1bcef060ad24e409b9b69d38aca8d1e5b",
+    "git_dirty": false
+  },
+  "models": {
+    "embedding": "BAAI/bge-small-en-v1.5",
+    "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "generator": "openai/gpt-oss-120b",
+    "rewriter": "openai/gpt-oss-20b",
+    "relevance_checker": "openai/gpt-oss-20b",
+    "groundedness_checker": "openai/gpt-oss-20b",
+    "judge": "qwen/qwen3.8-27b"
+  },
+  "generation": {
+    "status": "complete",
+    "selected_questions": 129,
+    "successful_predictions": 129,
+    "generation_errors": 0,
+    "checker_diagnostics": {
+      "relevance": {
+        "valid": 129,
+        "unknown": 0,
+        "unknown_by_cause": {
+          "rate_limit_tpm": 0,
+          "rate_limit_tpd": 0,
+          "malformed_output": 0,
+          "timeout": 0,
+          "connection": 0,
+          "other_failure": 0
+        }
+      },
+      "groundedness": {
+        "valid": 129,
+        "unknown": 0,
+        "unknown_by_cause": {
+          "rate_limit_tpm": 0,
+          "rate_limit_tpd": 0,
+          "malformed_output": 0,
+          "timeout": 0,
+          "connection": 0,
+          "other_failure": 0
+        }
+      }
+    },
+    "generation_case_pacing": {
+      "total_sleep_seconds": 2209.057
+    }
+  },
+  "deterministic_qasper": {
+    "status": "complete",
+    "answer_f1": 0.23778598251638947,
+    "answer_f1_percentage": 23.778598251638947,
+    "answer_f1_by_matched_answer_type": {
+      "extractive": 0.2130504383733168,
+      "abstractive": 0.19674578150123506,
+      "boolean": 0.026518381184630662,
+      "none": 0.8
+    },
+    "evaluated_cases": 129,
+    "duplicate_attempts": 0,
+    "evidence_f1": null,
+    "evidence_f1_note": "Evidence F1 is not computed because retrieved chunks are not mapped to QASPER evidence format."
+  },
+  "deepeval": {
+    "status": "complete",
+    "judge_id": "qwen3.8-27b-publication-v1",
+    "model": "qwen/qwen3.8-27b",
+    "evaluator_version": "qasper-reference-geval-v1.6",
+    "mean_semantic_correctness": 0.7131782945736438,
+    "full_run_semantic_correctness": 0.7131782945736438,
+    "pass_rate": 0.6511627906976745,
+    "threshold": 0.7,
+    "evaluation_coverage": 1.0,
+    "successful_judgments": 129,
+    "generation_errors": 0,
+    "judge_errors": 0,
+    "expected_reference_judgments": 229,
+    "successful_reference_judgments": 229,
+    "reference_judgment_errors": 0,
+    "reference_count_distribution": {
+      "1": 34,
+      "2": 90,
+      "3": 5
+    },
+    "cases_matched_by_answer_type": {
+      "extractive": 73,
+      "abstractive": 33,
+      "boolean": 13,
+      "none": 10
+    },
+    "non_first_winning_reference_count": 23,
+    "reliability": {
+      "total_provider_attempts": 229,
+      "cases_requiring_retry_count": 0,
+      "total_retry_count": 0,
+      "total_rate_limit_response_count": 0,
+      "total_rate_limit_retry_count": 0,
+      "total_other_transient_retry_count": 0,
+      "total_schema_output_retry_count": 0,
+      "total_pacing_sleep_seconds": 1219.872,
+      "total_retry_backoff_sleep_seconds": 0.0,
+      "telemetry_covered_selected_case_count": 129,
+      "unresolved_judge_error_count": 0,
+      "historical_judge_error_attempt_count": 0
+    },
+    "nondeterminism_note": "This is a nondeterministic LLM-as-a-judge evaluation even with fixed prompts and deterministic provider settings."
+  },
+  "report": {
+    "status": "complete",
+    "path": "benchmarking/runs/qasper-publication-v1-28p/evaluation_report.md"
+  },
+  "paths": {
+    "pipeline_manifest": "benchmarking/runs/qasper-publication-v1-28p/pipeline_manifest.json",
+    "pipeline_summary": "benchmarking/runs/qasper-publication-v1-28p/pipeline_summary.json",
+    "generation_manifest": "benchmarking/runs/qasper-publication-v1-28p/generation_manifest.json",
+    "answers": "benchmarking/runs/qasper-publication-v1-28p/answers.jsonl",
+    "qasper_metrics": "benchmarking/runs/qasper-publication-v1-28p/qasper_metrics.json",
+    "qasper_scores": "benchmarking/runs/qasper-publication-v1-28p/qasper_scores.jsonl",
+    "deepeval_judge_manifest": "benchmarking/runs/qasper-publication-v1-28p/deepeval/qwen3.8-27b-publication-v1/judge_manifest.json",
+    "deepeval_metrics": "benchmarking/runs/qasper-publication-v1-28p/deepeval/qwen3.8-27b-publication-v1/metrics.json",
+    "deepeval_scores": "benchmarking/runs/qasper-publication-v1-28p/deepeval/qwen3.8-27b-publication-v1/scores.jsonl",
+    "evaluation_report": "benchmarking/runs/qasper-publication-v1-28p/evaluation_report.md"
+  },
+  "completion_timestamp": "2026-09-09T19:25:21.296882+00:00",
+  "error": null
+}

@@ -1,0 +1,8 @@
+# Standalone CPython 3.11 evaluation contract. Do not combine with the
+# application/Chroma environment; DeepEval and Chroma require incompatible
+# major versions of PostHog.
+deepeval==4.2.0
+datasets==5.0.1
+groq==0.37.1
+python-dotenv==1.2.1
+requests==2.32.5

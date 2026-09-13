@@ -1,0 +1,69 @@
+{
+  "run_id": "qasper-publication-v1-28p",
+  "path_base": "repository_root",
+  "evaluation_profile": {
+    "profile_name": "qasper-28p-publication-v1",
+    "profile_schema_version": 1,
+    "resolved_configuration": {
+      "profile_name": "qasper-28p-publication-v1",
+      "profile_schema_version": 1,
+      "qa_data_path": "benchmarking/data/qasper_qas_seed1001_size28.json",
+      "pdf_directory": "benchmarking/data/qasper_papers_seed1001_size28",
+      "retrieval_mode": "auto",
+      "chunk_size": 600,
+      "chunk_overlap": 50,
+      "retrieval_top_n": 30,
+      "fusion_threshold": 0.15,
+      "rerank_candidate_count": 30,
+      "rerank_top_k": 10,
+      "judge_model": "qwen/qwen3.8-27b",
+      "judge_threshold": 0.7,
+      "judge_reasoning_effort": "default",
+      "judge_max_retries": 3,
+      "judge_max_completion_tokens": 2048,
+      "judge_request_interval_seconds": 6.0,
+      "judge_retry_base_delay_seconds": 2.0,
+      "judge_retry_max_delay_seconds": 60.0,
+      "judge_retry_jitter_seconds": 0.5,
+      "judge_max_retry_after_seconds": 300.0,
+      "generation_case_interval_seconds": 30.0
+    },
+    "configuration_sha256": "e611b6f1d6606a6aed01d8624d9437380ab87a865af5a7ddf80db1c5a90e5ebb",
+    "dataset_sha256": "ca391c629a520ad9aaba61c5373f8fa54729e10bae7001f451bfc730d1b24853",
+    "git_commit": "45eac4a1bcef060ad24e409b9b69d38aca8d1e5b",
+    "git_dirty": false
+  },
+  "models": {
+    "embedding": "BAAI/bge-small-en-v1.5",
+    "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "generator": "openai/gpt-oss-120b",
+    "rewriter": "openai/gpt-oss-20b",
+    "relevance_checker": "openai/gpt-oss-20b",
+    "groundedness_checker": "openai/gpt-oss-20b"
+  },
+  "metric_name": "QASPER Answer F1",
+  "metric_provenance": {
+    "official_evaluator_url": "https://github.com/allenai/qasper-led-baseline/blob/e996b6c7b1b5f95d9308a74e3586416c6e780df1/scripts/evaluator.py",
+    "implementation": "Adapted from the official QASPER evaluator for this project's append-only JSONL generation runs; this is not the unmodified official script."
+  },
+  "normalization": "Lowercase, remove ASCII punctuation, remove articles a/an/the, and normalize whitespace; token-overlap F1 uses the maximum score across human references.",
+  "answer_f1": 0.23778598251638947,
+  "answer_f1_percentage": 23.778598251638947,
+  "answer_f1_by_matched_answer_type": {
+    "extractive": 0.2130504383733168,
+    "abstractive": 0.19674578150123506,
+    "boolean": 0.026518381184630662,
+    "none": 0.8
+  },
+  "selected_question_count": 129,
+  "unique_evaluated_case_count": 129,
+  "successful_prediction_count": 129,
+  "generation_error_count": 0,
+  "error_missing_count": 0,
+  "failure_handling_note": "Recorded generation errors score zero. An actually absent selected answer record is an integrity error and stops evaluation.",
+  "duplicate_attempt_count": 0,
+  "source_answers_path": "benchmarking/runs/qasper-publication-v1-28p/answers.jsonl",
+  "evaluation_timestamp": "2026-09-09T19:02:13.839416+00:00",
+  "evidence_f1": null,
+  "evidence_f1_note": "Evidence F1 is not computed because retrieved chunks are not mapped to QASPER evidence format."
+}

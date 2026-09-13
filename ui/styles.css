@@ -1,0 +1,632 @@
+:root {
+    --mr-bg: #0b0f14;
+    --mr-surface: #111821;
+    --mr-surface-raised: #18212c;
+    --mr-border: #293442;
+    --mr-text: #e8edf2;
+    --mr-text-secondary: #98a6b5;
+    --mr-text-muted: #7b8998;
+    --mr-accent: #3f8f88;
+    --mr-accent-hover: #55a39b;
+    --mr-selected: #183633;
+    --mr-error: #d66a6a;
+    --mr-warning: #c99a55;
+    --mr-success: #68a67d;
+}
+
+html, body, .gradio-container {
+    background: var(--mr-bg) !important;
+    color: var(--mr-text) !important;
+    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+.gradio-container {
+    /* Gradio 6.5.1 control tokens, shared by light and dark appearances. */
+    --slider-color: var(--mr-accent);
+    --color-accent: var(--mr-accent);
+    --color-accent-soft: var(--mr-selected);
+    --border-color-accent: var(--mr-accent);
+    --border-color-accent-subdued: var(--mr-selected);
+    --input-border-color: var(--mr-border);
+    --input-border-color-focus: var(--mr-accent-hover);
+    --input-text-color: var(--mr-text);
+    --input-placeholder-color: var(--mr-text-secondary);
+    --input-shadow-focus: 0 0 0 2px var(--mr-accent-hover);
+    --checkbox-background-color: var(--mr-surface-raised);
+    --checkbox-background-color-hover: var(--mr-selected);
+    --checkbox-background-color-focus: var(--mr-selected);
+    --checkbox-background-color-selected: var(--mr-accent);
+    --checkbox-border-color: var(--mr-text-muted);
+    --checkbox-border-color-hover: var(--mr-accent-hover);
+    --checkbox-border-color-focus: var(--mr-accent-hover);
+    --checkbox-border-color-selected: var(--mr-accent);
+    --checkbox-label-background-fill: var(--mr-surface);
+    --checkbox-label-background-fill-hover: var(--mr-surface-raised);
+    --checkbox-label-background-fill-selected: var(--mr-selected);
+    --checkbox-label-border-color: var(--mr-border);
+    --checkbox-label-border-color-hover: var(--mr-accent-hover);
+    --checkbox-label-border-color-selected: var(--mr-accent);
+    --checkbox-label-text-color: var(--mr-text);
+    --checkbox-label-text-color-selected: var(--mr-text);
+    --block-info-text-color: var(--mr-text-secondary);
+    --block-label-background-fill: var(--mr-surface);
+    --link-text-color: var(--mr-accent-hover);
+    --link-text-color-hover: var(--mr-accent-hover);
+    --link-text-color-active: var(--mr-accent-hover);
+    --button-primary-background-fill: var(--mr-accent);
+    --button-primary-background-fill-hover: var(--mr-accent-hover);
+    --button-primary-border-color: var(--mr-accent);
+    --button-primary-border-color-hover: var(--mr-accent-hover);
+    --button-primary-text-color: var(--mr-bg);
+    --button-primary-text-color-hover: var(--mr-bg);
+    --body-background-fill: var(--mr-bg);
+    --background-fill-primary: var(--mr-surface);
+    --background-fill-secondary: var(--mr-surface-raised);
+    --block-background-fill: var(--mr-surface);
+    --block-border-color: var(--mr-border);
+    --border-color-primary: var(--mr-border);
+    --input-background-fill: #0d141b;
+    --body-text-color: var(--mr-text);
+    --body-text-color-subdued: var(--mr-text-secondary);
+    --block-label-text-color: var(--mr-text-secondary);
+    --block-title-text-color: var(--mr-text);
+    --button-secondary-background-fill: var(--mr-surface-raised);
+    --button-secondary-background-fill-hover: #202b38;
+    --button-secondary-border-color: var(--mr-border);
+    --button-secondary-text-color: var(--mr-text);
+    max-width: 1440px !important;
+    margin: 0 auto !important;
+    padding: 24px clamp(16px, 3vw, 40px) 36px !important;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Align standalone HTML cards with the workspace's outer grid edges. */
+.mr-full-width {
+    --block-padding: 0px;
+    padding: 0 !important;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#product-header,
+#about-project {
+    width: 100%;
+    box-sizing: border-box;
+    margin-inline: 0;
+}
+
+#product-header {
+    margin-bottom: 24px;
+    padding: clamp(22px, 4vw, 34px);
+    background: var(--mr-surface);
+    border: 1px solid var(--mr-border);
+    border-radius: 16px;
+}
+
+.mr-header-top,
+.mr-header-footer,
+.mr-project-links {
+    display: flex;
+    align-items: center;
+}
+
+.mr-header-top {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+}
+
+.mr-eyebrow {
+    color: var(--mr-accent-hover);
+    font: 500 0.75rem/1.4 "JetBrains Mono", ui-monospace, monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.mr-version {
+    flex: 0 0 auto;
+    padding: 5px 9px;
+    color: var(--mr-text-secondary);
+    background: var(--mr-surface-raised);
+    border: 1px solid var(--mr-border);
+    border-radius: 999px;
+    font: 500 0.72rem/1 "JetBrains Mono", ui-monospace, monospace;
+}
+
+.mr-title-lockup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    margin: 12px 0 8px;
+}
+
+.mr-logo {
+    display: block;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    /* Visible SVG bounds span 50 of 64 units; match the title's cap height. */
+    width: 1.28cap;
+    height: 1.28cap;
+    flex: 0 0 1.28cap;
+    object-fit: contain;
+    /* Optical alignment with the title glyphs; scales with their font size. */
+    position: relative;
+    top: 0.04em;
+}
+
+.mr-title {
+    min-width: 0;
+    margin: 0;
+    color: var(--mr-text);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    letter-spacing: -0.045em;
+    line-height: 1.02;
+}
+
+.mr-tagline {
+    margin: 0;
+    color: var(--mr-text-secondary);
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.mr-header-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid var(--mr-border);
+}
+
+.mr-author-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    color: var(--mr-text-secondary);
+    font-size: 0.82rem;
+}
+
+.mr-resource-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--mr-border);
+}
+
+#about-project .mr-resource-links a {
+    color: var(--mr-accent-hover);
+    text-decoration: underline;
+    overflow-wrap: anywhere;
+}
+
+#portfolio-demo-notice {
+    margin-bottom: 20px;
+    padding: 16px 20px;
+    border: 1px solid var(--mr-border);
+    border-left: 3px solid var(--mr-accent);
+    border-radius: 10px;
+    background: var(--mr-surface);
+    color: var(--mr-text-secondary);
+    overflow-wrap: anywhere;
+}
+
+#portfolio-demo-notice h2 {
+    margin: 0 0 6px;
+    color: var(--mr-text);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+#portfolio-demo-notice p {
+    margin: 0;
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+.mr-positioning {
+    margin: 6px 0 0;
+    color: var(--mr-accent-hover);
+    font: 500 0.84375rem/1.5 "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.mr-project-links {
+    flex-wrap: wrap;
+    gap: 8px 16px;
+}
+
+.mr-project-links a,
+#about-project a {
+    color: var(--mr-text-secondary);
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-underline-offset: 3px;
+}
+
+.mr-project-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.mr-project-links svg {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+}
+
+.mr-project-links a:hover,
+.mr-project-links a:focus-visible,
+#about-project a:hover {
+    color: var(--mr-accent-hover);
+    text-decoration: underline;
+}
+
+.mr-project-links a:focus-visible,
+#about-project a:focus-visible {
+    outline: 2px solid var(--mr-accent-hover);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+#workspace-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 35fr) minmax(0, 65fr);
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: nowrap;
+}
+
+#workspace-grid > div,
+#workspace-grid .mr-panel {
+    min-width: 0 !important;
+    box-sizing: border-box;
+}
+
+#workspace-grid label,
+#workspace-grid textarea,
+#workspace-grid a,
+#workspace-grid p,
+#workspace-grid pre,
+#product-header,
+#about-project {
+    overflow-wrap: anywhere;
+}
+
+#workspace-grid textarea,
+#workspace-grid pre {
+    white-space: pre-wrap;
+}
+
+#selected-docs label {
+    max-width: 100%;
+    white-space: normal;
+    align-items: flex-start;
+}
+
+#selected-docs input {
+    flex-shrink: 0;
+}
+
+#indexing-configuration,
+#retrieval-configuration {
+    border-color: var(--mr-border);
+    margin-block: 8px;
+}
+
+#indexing-configuration p,
+#retrieval-configuration p {
+    color: var(--mr-text-secondary);
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+#workspace-grid input[type="number"] {
+    color: var(--mr-text);
+    font-variant-numeric: tabular-nums;
+}
+
+#workspace-grid input {
+    accent-color: var(--mr-accent);
+}
+
+#workspace-grid input[type="range"]::-webkit-slider-thumb {
+    background-color: var(--mr-accent);
+    box-shadow: none;
+}
+
+#workspace-grid input[type="range"]::-moz-range-thumb {
+    background-color: var(--mr-accent);
+    box-shadow: none;
+}
+
+.mr-panel {
+    padding: 20px !important;
+    background: var(--mr-surface) !important;
+    border: 1px solid var(--mr-border) !important;
+    border-radius: 14px !important;
+}
+
+.mr-section-heading h2 {
+    margin: 0 0 4px !important;
+    color: var(--mr-text) !important;
+    font-size: 1.05rem !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.015em;
+}
+
+.mr-section-heading p {
+    margin: 0 0 16px !important;
+    color: var(--mr-text-muted) !important;
+    font-size: 0.82rem !important;
+    line-height: 1.5 !important;
+}
+
+/* Keep the language scope beside the Knowledge Base introduction. */
+.mr-section-heading p:has(+ .mr-language-scope) {
+    margin-bottom: 0 !important;
+}
+
+.mr-section-heading p.mr-language-scope {
+    margin: 4px 0 12px !important;
+    color: var(--mr-text-muted) !important;
+    font-size: 0.75rem !important;
+    line-height: 1.45 !important;
+}
+
+.mr-language-scope strong {
+    color: var(--mr-text-secondary);
+    font-weight: 600;
+}
+
+#sources-panel textarea,
+#chunks-panel textarea,
+#diagnostics-panel textarea {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace !important;
+    font-size: 0.78rem !important;
+    line-height: 1.55 !important;
+}
+
+#file-status {
+    padding: 14px;
+    background: #0d141b;
+    border: 1px solid var(--mr-border);
+    border-radius: 10px;
+    color: var(--mr-text-secondary);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    min-width: 0;
+}
+
+#file-status strong {
+    color: var(--mr-text);
+}
+
+#file-status p,
+#file-status li {
+    overflow-wrap: anywhere;
+}
+
+#conversation-panel {
+    min-width: 0;
+}
+
+#conversation-panel .chatbot {
+    border-color: var(--mr-border) !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+}
+
+/* Compact diagnostics separators, titles and lists inside chat messages. */
+#chat-panel hr {
+    margin: 0.75rem 0 0.55rem !important;
+    border: 0 !important;
+    border-top: 1px solid var(--mr-border) !important;
+}
+
+#chat-panel hr + p {
+    margin: 0 0 0.3rem !important;
+}
+
+#chat-panel hr + p + ul {
+    margin: 0 !important;
+    padding-left: 1.2rem !important;
+}
+
+#chat-panel hr + p + ul li {
+    margin: 0.1rem 0 !important;
+}
+
+#chat-panel hr + p + ul li::marker {
+    color: var(--mr-accent);
+}
+
+/* Page viewport plus every Gradio-owned nested scroller. Browser chrome
+   is outside this document; no generated component classes are required. */
+:is(html, body, .gradio-container, .gradio-container *) {
+    scrollbar-width: thin;
+    scrollbar-color: #3a4654 #0d141b;
+}
+
+/* Firefox exposes hover on the scroll area, not on the native thumb. */
+:is(html, body, .gradio-container, .gradio-container *):hover {
+    scrollbar-color: #3f8f88 #0d141b;
+}
+
+/* Prefer precise thumb sizing/hover where WebKit scrollbar parts exist.
+   Reset standard properties here so modern Chromium does not override them. */
+@supports selector(::-webkit-scrollbar) {
+    :is(html, body, .gradio-container, .gradio-container *),
+    :is(html, body, .gradio-container, .gradio-container *):hover {
+        scrollbar-width: auto;
+        scrollbar-color: auto;
+    }
+
+    :is(html, body, .gradio-container, .gradio-container *)::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    :is(html, body, .gradio-container, .gradio-container *)::-webkit-scrollbar-track {
+        background: #0d141b;
+    }
+
+    :is(html, body, .gradio-container, .gradio-container *)::-webkit-scrollbar-thumb {
+        background: #3a4654;
+        border-radius: 8px;
+    }
+
+    :is(html, body, .gradio-container, .gradio-container *)::-webkit-scrollbar-thumb:hover,
+    :is(html, body, .gradio-container, .gradio-container *)::-webkit-scrollbar-thumb:active {
+        background: #3f8f88;
+    }
+
+    :is(html, body, .gradio-container, .gradio-container *)::-webkit-scrollbar-corner {
+        background: transparent;
+    }
+}
+
+#query-input textarea {
+    min-height: 54px !important;
+}
+
+#send-button {
+    background: var(--mr-accent) !important;
+    border-color: var(--mr-accent) !important;
+    color: var(--mr-bg) !important;
+    font-weight: 600 !important;
+}
+
+#send-button:hover {
+    background: var(--mr-accent-hover) !important;
+    border-color: var(--mr-accent-hover) !important;
+}
+
+#reset-button {
+    background: transparent !important;
+    border-color: var(--mr-border) !important;
+    color: var(--mr-text-secondary) !important;
+}
+
+#send-button:focus-visible,
+#reset-button:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--mr-accent-hover) !important;
+    outline-offset: 2px !important;
+}
+
+.mr-system-note {
+    margin: 2px 0 14px;
+    padding-left: 12px;
+    border-left: 2px solid var(--mr-warning);
+    color: var(--mr-text-muted);
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
+.mr-system-note strong {
+    color: var(--mr-text-secondary);
+    font-weight: 600;
+}
+
+.mr-inspection {
+    padding: 10px 12px;
+    background: #0d141b;
+    border: 1px solid var(--mr-border);
+    border-radius: 10px;
+}
+
+#about-project {
+    margin-top: 20px;
+    padding: 20px 22px;
+    background: var(--mr-surface);
+    border: 1px solid var(--mr-border);
+    border-radius: 14px;
+    color: var(--mr-text-secondary);
+}
+
+#about-project h2 {
+    margin: 0 0 8px;
+    color: var(--mr-text);
+    font-size: 1rem;
+}
+
+#about-project p {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.65;
+}
+
+#about-project .mr-about-meta {
+    margin-top: 10px;
+    color: var(--mr-text-muted);
+    font: 400 0.74rem/1.5 "JetBrains Mono", ui-monospace, monospace;
+}
+
+footer {
+    display: none !important;
+}
+
+@media (max-width: 1080px) {
+    .gradio-container {
+        padding: 12px 12px 24px !important;
+    }
+
+    #product-header,
+    .mr-panel {
+        padding: 18px !important;
+        border-radius: 12px !important;
+    }
+
+    .mr-header-footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    #workspace-grid {
+        grid-template-columns: minmax(0, 1fr);
+        flex-direction: column !important;
+    }
+
+    #workspace-grid > div {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    #action-row,
+    .mr-inspection {
+        flex-wrap: wrap !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

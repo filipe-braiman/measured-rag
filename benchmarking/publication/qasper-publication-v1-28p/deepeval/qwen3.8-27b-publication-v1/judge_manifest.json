@@ -1,0 +1,199 @@
+{
+  "generation_run_id": "qasper-publication-v1-28p",
+  "judge_id": "qwen3.8-27b-publication-v1",
+  "judge_model": "qwen/qwen3.8-27b",
+  "status": "complete",
+  "started_at": "2026-09-09T19:02:27.050619+00:00",
+  "completed_at": "2026-09-09T19:25:18.355046+00:00",
+  "evaluator_version": "qasper-reference-geval-v1.6",
+  "deepeval_metric_name": "QASPER Reference-Based Answer Correctness",
+  "deepeval_version": "4.2.0",
+  "groq_sdk_version": "0.37.1",
+  "path_base": "repository_root",
+  "evaluation_profile": {
+    "profile_name": "qasper-28p-publication-v1",
+    "profile_schema_version": 1,
+    "resolved_configuration": {
+      "profile_name": "qasper-28p-publication-v1",
+      "profile_schema_version": 1,
+      "qa_data_path": "benchmarking/data/qasper_qas_seed1001_size28.json",
+      "pdf_directory": "benchmarking/data/qasper_papers_seed1001_size28",
+      "retrieval_mode": "auto",
+      "chunk_size": 600,
+      "chunk_overlap": 50,
+      "retrieval_top_n": 30,
+      "fusion_threshold": 0.15,
+      "rerank_candidate_count": 30,
+      "rerank_top_k": 10,
+      "judge_model": "qwen/qwen3.8-27b",
+      "judge_threshold": 0.7,
+      "judge_reasoning_effort": "default",
+      "judge_max_retries": 3,
+      "judge_max_completion_tokens": 2048,
+      "judge_request_interval_seconds": 6.0,
+      "judge_retry_base_delay_seconds": 2.0,
+      "judge_retry_max_delay_seconds": 60.0,
+      "judge_retry_jitter_seconds": 0.5,
+      "judge_max_retry_after_seconds": 300.0,
+      "generation_case_interval_seconds": 30.0
+    },
+    "configuration_sha256": "e611b6f1d6606a6aed01d8624d9437380ab87a865af5a7ddf80db1c5a90e5ebb",
+    "dataset_sha256": "ca391c629a520ad9aaba61c5373f8fa54729e10bae7001f451bfc730d1b24853",
+    "git_commit": "45eac4a1bcef060ad24e409b9b69d38aca8d1e5b",
+    "git_dirty": false
+  },
+  "models": {
+    "embedding": "BAAI/bge-small-en-v1.5",
+    "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "generator": "openai/gpt-oss-120b",
+    "rewriter": "openai/gpt-oss-20b",
+    "relevance_checker": "openai/gpt-oss-20b",
+    "groundedness_checker": "openai/gpt-oss-20b",
+    "judge": "qwen/qwen3.8-27b"
+  },
+  "judge_request": {
+    "threshold": 0.7,
+    "max_questions": null,
+    "reasoning_effort": "default",
+    "max_retries": 3,
+    "request_interval_seconds": 6.0,
+    "retry_base_delay_seconds": 2.0,
+    "retry_max_delay_seconds": 60.0,
+    "retry_jitter_seconds": 0.5,
+    "max_retry_after_seconds": 300.0,
+    "temperature": 0.0,
+    "seed": 0,
+    "max_completion_tokens": 2048,
+    "reasoning_format": "hidden",
+    "reasoning_output_control": "reasoning_format",
+    "stream": false,
+    "timeout": 120.0,
+    "strict_mode": false,
+    "provider_schema_mode": "strict_json_schema",
+    "provider_schema_strict": true,
+    "async_mode": false,
+    "log_probability_weighting_used": false
+  },
+  "evaluation_steps": [
+    "Identify the exact fact or conclusion requested by the question in INPUT.",
+    "Treat the reference answer as acceptable, not as an exhaustive description of every correct response.",
+    "Use only this annotation's supplied gold evidence to understand and verify its reference answer.",
+    "Judge whether ACTUAL_OUTPUT communicates the same central fact or a compatible answer supported by that evidence.",
+    "Accept correct paraphrases, explanations, and more specific answers.",
+    "Absence of a detail from a short reference is not evidence that the detail is fabricated.",
+    "Penalize an additional claim only when it materially changes the answer or is contradicted by the reference or supplied gold evidence.",
+    "Do not require exact wording when the meaning is equivalent.",
+    "For yes/no questions, require the correct conclusion.",
+    "For an Unanswerable reference, treat an explicit abstention as correct and reject a substantive answer that conflicts with the unanswerable annotation.",
+    "Treat tokens matching BIBREF<n>, TABREF<n>, FIGREF<n>, or SECREF<n> as non-semantic QASPER annotation markup. Their numeric suffixes do not necessarily equal human-visible citation, table, figure, or section numbers. Do not require ACTUAL_OUTPUT to repeat them, and do not treat a natural label such as Table 6 as contradictory to TABREF19 solely because the numbers differ.",
+    "Treat INLINEFORM<n> as a marker for omitted mathematical content. Do not require the literal marker and do not invent its missing mathematical value; judge only substantive information that remains available in the supplied reference and gold evidence.",
+    "Evaluate all ordinary factual content normally.",
+    "For a locator-style reference such as column Ens Test in Table TABREF19, do not presume that additional values are fabricated solely because the abbreviated reference does not reproduce them.",
+    "Apply the fixed rubric to correctness of the central answer and give a concise reason."
+  ],
+  "rubric": [
+    {
+      "score_range": [
+        0,
+        1
+      ],
+      "expected_outcome": "Wrong conclusion, incompatible answer, or fabricated substantive answer for an unanswerable case."
+    },
+    {
+      "score_range": [
+        2,
+        4
+      ],
+      "expected_outcome": "Mostly incorrect, seriously incomplete, or materially contradictory."
+    },
+    {
+      "score_range": [
+        5,
+        6
+      ],
+      "expected_outcome": "Partially correct but missing or misstating an important part."
+    },
+    {
+      "score_range": [
+        7,
+        8
+      ],
+      "expected_outcome": "Central answer is correct with a minor omission or non-material issue."
+    },
+    {
+      "score_range": [
+        9,
+        10
+      ],
+      "expected_outcome": "Central answer is fully correct; compatible explanation or additional detail is allowed."
+    }
+  ],
+  "qasper_placeholder_policy": {
+    "policy_version": "qasper-placeholder-markup-v1",
+    "non_semantic_cross_reference_patterns": [
+      "BIBREF<n>",
+      "TABREF<n>",
+      "FIGREF<n>",
+      "SECREF<n>"
+    ],
+    "omitted_mathematical_content_pattern": "INLINEFORM<n>",
+    "reference_transformation": "none",
+    "original_converted_reference_preserved": true
+  },
+  "qasper_annotation_evidence_policy": {
+    "policy_version": "qasper-annotation-evidence-v1",
+    "preferred_source": "highlighted_evidence",
+    "fallback_source": "evidence",
+    "empty_source": "none",
+    "ordering": "original",
+    "usable_text": "non-empty after whitespace trimming",
+    "reference_transformation": "none",
+    "evidence_transformation": "none",
+    "empty_evidence_message": "No gold evidence was supplied."
+  },
+  "case_selection": null,
+  "reference_semantics_note": "Each prediction is evaluated independently against every valid QASPER annotation, and the maximum reference-level semantic score is retained. Each request uses that annotation's gold evidence. QASPER cross-reference placeholders are treated as non-semantic annotation markup, and absence from an abbreviated reference is not itself evidence of fabrication.",
+  "paths": {
+    "generation_run": "benchmarking/runs/qasper-publication-v1-28p",
+    "judge_run": "benchmarking/runs/qasper-publication-v1-28p/deepeval/qwen3.8-27b-publication-v1",
+    "scores": "benchmarking/runs/qasper-publication-v1-28p/deepeval/qwen3.8-27b-publication-v1/scores.jsonl",
+    "metrics": "benchmarking/runs/qasper-publication-v1-28p/deepeval/qwen3.8-27b-publication-v1/metrics.json"
+  },
+  "counts": {
+    "selected_cases": 129,
+    "expected_reference_judgment_count": 229,
+    "duplicate_generation_attempts": 0,
+    "score_attempt_records": 129,
+    "completed_resume_keys": 129,
+    "judge_error_attempt_count": 0,
+    "unresolved_judge_error_count": 0,
+    "successful_judgments": 129,
+    "total_provider_attempts": 229,
+    "cases_requiring_retry_count": 0,
+    "total_retry_count": 0,
+    "total_rate_limit_response_count": 0,
+    "total_rate_limit_retry_count": 0,
+    "total_other_transient_retry_count": 0,
+    "total_schema_output_retry_count": 0,
+    "total_pacing_sleep_seconds": 1219.872,
+    "total_retry_backoff_sleep_seconds": 0.0,
+    "telemetry_covered_selected_case_count": 129,
+    "successful_reference_judgment_count": 229,
+    "reference_judgment_error_count": 0,
+    "reference_count_distribution": {
+      "1": 34,
+      "2": 90,
+      "3": 5
+    },
+    "cases_matched_by_answer_type": {
+      "extractive": 73,
+      "abstractive": 33,
+      "boolean": 13,
+      "none": 10
+    },
+    "non_first_winning_reference_count": 23,
+    "generation_errors": 0,
+    "non_null_evaluated_cases": 129
+  },
+  "evaluator_revision_note": "v1.6 corrects judge instructions and adds annotation-specific gold evidence; independent-reference maximum scoring is retained."
+}

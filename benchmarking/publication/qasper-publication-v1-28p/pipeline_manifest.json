@@ -1,0 +1,218 @@
+{
+  "pipeline_version": "qasper-eval-pipeline-v1.6",
+  "run_id": "qasper-publication-v1-28p",
+  "status": "complete",
+  "started_at": "2026-09-09T17:49:47.709280+00:00",
+  "completed_at": "2026-09-09T19:25:21.296882+00:00",
+  "elapsed_seconds": 5734.938000000024,
+  "path_base": "repository_root",
+  "generation_profile": {
+    "profile_name": "qasper-28p-publication-v1",
+    "profile_schema_version": 1,
+    "resolved_configuration": {
+      "profile_name": "qasper-28p-publication-v1",
+      "profile_schema_version": 1,
+      "qa_data_path": "benchmarking/data/qasper_qas_seed1001_size28.json",
+      "pdf_directory": "benchmarking/data/qasper_papers_seed1001_size28",
+      "retrieval_mode": "auto",
+      "chunk_size": 600,
+      "chunk_overlap": 50,
+      "retrieval_top_n": 30,
+      "fusion_threshold": 0.15,
+      "rerank_candidate_count": 30,
+      "rerank_top_k": 10,
+      "judge_model": "qwen/qwen3.8-27b",
+      "judge_threshold": 0.7,
+      "judge_reasoning_effort": "default",
+      "judge_max_retries": 3,
+      "judge_max_completion_tokens": 2048,
+      "judge_request_interval_seconds": 6.0,
+      "judge_retry_base_delay_seconds": 2.0,
+      "judge_retry_max_delay_seconds": 60.0,
+      "judge_retry_jitter_seconds": 0.5,
+      "judge_max_retry_after_seconds": 300.0,
+      "generation_case_interval_seconds": 30.0
+    },
+    "configuration_sha256": "e611b6f1d6606a6aed01d8624d9437380ab87a865af5a7ddf80db1c5a90e5ebb",
+    "dataset_sha256": "ca391c629a520ad9aaba61c5373f8fa54729e10bae7001f451bfc730d1b24853",
+    "git_commit": "45eac4a1bcef060ad24e409b9b69d38aca8d1e5b",
+    "git_dirty": false
+  },
+  "effective_judge_profile": {
+    "profile_name": "qasper-28p-publication-v1",
+    "profile_schema_version": 1,
+    "resolved_configuration": {
+      "profile_name": "qasper-28p-publication-v1",
+      "profile_schema_version": 1,
+      "qa_data_path": "benchmarking/data/qasper_qas_seed1001_size28.json",
+      "pdf_directory": "benchmarking/data/qasper_papers_seed1001_size28",
+      "retrieval_mode": "auto",
+      "chunk_size": 600,
+      "chunk_overlap": 50,
+      "retrieval_top_n": 30,
+      "fusion_threshold": 0.15,
+      "rerank_candidate_count": 30,
+      "rerank_top_k": 10,
+      "judge_model": "qwen/qwen3.8-27b",
+      "judge_threshold": 0.7,
+      "judge_reasoning_effort": "default",
+      "judge_max_retries": 3,
+      "judge_max_completion_tokens": 2048,
+      "judge_request_interval_seconds": 6.0,
+      "judge_retry_base_delay_seconds": 2.0,
+      "judge_retry_max_delay_seconds": 60.0,
+      "judge_retry_jitter_seconds": 0.5,
+      "judge_max_retry_after_seconds": 300.0,
+      "generation_case_interval_seconds": 30.0
+    },
+    "configuration_sha256": "e611b6f1d6606a6aed01d8624d9437380ab87a865af5a7ddf80db1c5a90e5ebb",
+    "dataset_sha256": "ca391c629a520ad9aaba61c5373f8fa54729e10bae7001f451bfc730d1b24853",
+    "git_commit": "45eac4a1bcef060ad24e409b9b69d38aca8d1e5b",
+    "git_dirty": false
+  },
+  "semantic_evaluation_contract": {
+    "evaluator_version": "qasper-reference-geval-v1.6",
+    "execution": "one independent provider request per annotation",
+    "selection": "maximum annotation score; first annotation wins ties",
+    "placeholder_policy": "qasper-placeholder-markup-v1",
+    "annotation_evidence_policy": {
+      "policy_version": "qasper-annotation-evidence-v1",
+      "preferred_source": "highlighted_evidence",
+      "fallback_source": "evidence",
+      "empty_source": "none",
+      "ordering": "original",
+      "usable_text": "non-empty after whitespace trimming",
+      "reference_transformation": "none",
+      "evidence_transformation": "none",
+      "empty_evidence_message": "No gold evidence was supplied."
+    },
+    "abbreviated_reference_absence_is_fabrication": false
+  },
+  "case_selection": null,
+  "models": {
+    "judge": "qwen/qwen3.8-27b",
+    "embedding": "BAAI/bge-small-en-v1.5",
+    "reranker": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "generator": "openai/gpt-oss-120b",
+    "rewriter": "openai/gpt-oss-20b",
+    "relevance_checker": "openai/gpt-oss-20b",
+    "groundedness_checker": "openai/gpt-oss-20b"
+  },
+  "invocation_configuration": {
+    "max_papers": null,
+    "max_questions": null,
+    "resume_generation": false,
+    "skip_generation": false,
+    "skip_qasper": false,
+    "skip_deepeval": false,
+    "skip_report": false,
+    "judge_id": "qwen3.8-27b-publication-v1",
+    "judge_max_questions": null,
+    "resume_judge": false,
+    "dry_run": false,
+    "select_below_threshold_from_run": null,
+    "selection_judge_id": null
+  },
+  "python_version": "3.11.14 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 18:30:03) [MSC v.1929 64 bit (AMD64)]",
+  "git_commit": "45eac4a1bcef060ad24e409b9b69d38aca8d1e5b",
+  "git_dirty": false,
+  "stages": [
+    {
+      "stage": "generation",
+      "status": "complete",
+      "action": "executed",
+      "command_arguments": [
+        "python",
+        "-m",
+        "benchmarking.generate_answers",
+        "--run-id",
+        "qasper-publication-v1-28p"
+      ],
+      "started_at": "2026-09-09T17:49:48.198347+00:00",
+      "completed_at": "2026-09-09T19:02:13.076460+00:00",
+      "elapsed_seconds": 4344.686999999976,
+      "subprocess_return_code": 0,
+      "validated_artifact_paths": [
+        "benchmarking/runs/qasper-publication-v1-28p/generation_manifest.json",
+        "benchmarking/runs/qasper-publication-v1-28p/answers.jsonl"
+      ],
+      "error": null
+    },
+    {
+      "stage": "qasper",
+      "status": "complete",
+      "action": "executed",
+      "command_arguments": [
+        "python",
+        "-m",
+        "benchmarking.evaluate_qasper_f1",
+        "--run-id",
+        "qasper-publication-v1-28p"
+      ],
+      "started_at": "2026-09-09T19:02:13.087189+00:00",
+      "completed_at": "2026-09-09T19:02:13.984401+00:00",
+      "elapsed_seconds": 0.8910000000032596,
+      "subprocess_return_code": 0,
+      "validated_artifact_paths": [
+        "benchmarking/runs/qasper-publication-v1-28p/qasper_metrics.json",
+        "benchmarking/runs/qasper-publication-v1-28p/qasper_scores.jsonl"
+      ],
+      "error": null
+    },
+    {
+      "stage": "deepeval",
+      "status": "complete",
+      "action": "executed",
+      "command_arguments": [
+        "python",
+        "-m",
+        "benchmarking.evaluate_deepeval",
+        "--run-id",
+        "qasper-publication-v1-28p",
+        "--judge-id",
+        "qwen3.8-27b-publication-v1",
+        "--judge-model",
+        "qwen/qwen3.8-27b",
+        "--threshold",
+        "0.7",
+        "--reasoning-effort",
+        "default",
+        "--max-retries",
+        "3"
+      ],
+      "started_at": "2026-09-09T19:02:14.007263+00:00",
+      "completed_at": "2026-09-09T19:25:21.296882+00:00",
+      "elapsed_seconds": 1387.2660000000033,
+      "subprocess_return_code": 0,
+      "validated_artifact_paths": [
+        "benchmarking/runs/qasper-publication-v1-28p/deepeval/qwen3.8-27b-publication-v1/judge_manifest.json",
+        "benchmarking/runs/qasper-publication-v1-28p/deepeval/qwen3.8-27b-publication-v1/metrics.json",
+        "benchmarking/runs/qasper-publication-v1-28p/deepeval/qwen3.8-27b-publication-v1/scores.jsonl"
+      ],
+      "error": null
+    },
+    {
+      "stage": "report",
+      "status": "complete",
+      "action": "executed",
+      "command_arguments": [
+        "python",
+        "-m",
+        "benchmarking.generate_report",
+        "--run-id",
+        "qasper-publication-v1-28p",
+        "--judge-id",
+        "qwen3.8-27b-publication-v1"
+      ],
+      "started_at": "2026-09-09T19:25:21.318780+00:00",
+      "completed_at": "2026-09-09T19:25:22.786453+00:00",
+      "elapsed_seconds": 1.4690000000409782,
+      "subprocess_return_code": 0,
+      "validated_artifact_paths": [
+        "benchmarking/runs/qasper-publication-v1-28p/evaluation_report.md"
+      ],
+      "error": null
+    }
+  ],
+  "error": null
+}
