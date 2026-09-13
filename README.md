@@ -6,7 +6,7 @@
 portfolio demonstration of a production-style document RAG system, not an
 enterprise production service.
 
-[![Measured RAG interface showing a grounded answer and retrieval diagnostics](assets/screenshots/measured-rag-overview.png)]
+![Measured RAG interface showing a grounded answer and retrieval diagnostics](assets/screenshots/measured-rag-overview.png)
 
 Measured RAG turns PDF and Word documents into an inspectable question-answering
 workflow. It makes ingestion, retrieval decisions, supporting evidence,
