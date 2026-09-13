@@ -6,14 +6,19 @@
 portfolio demonstration of a production-style document RAG system, not an
 enterprise production service.
 
-[![Measured RAG interface showing a grounded answer and retrieval diagnostics](assets/screenshots/measured-rag-overview.png)](assets/screenshots/measured-rag-demo-final.mp4)
-
-[Watch the one-minute demonstration](assets/screenshots/measured-rag-demo-final.mp4)
+![Measured RAG interface showing a grounded answer and retrieval diagnostics](assets/screenshots/measured-rag-overview.png)
 
 Measured RAG turns PDF and Word documents into an inspectable question-answering
 workflow. It makes ingestion, retrieval decisions, supporting evidence,
 diagnostics, telemetry, configuration, and evaluation visible instead of hiding
 the pipeline behind a chat interface.
+
+### Demo
+
+A 61-second walkthrough of document upload, hybrid retrieval, grounded answering, 
+diagnostics, and evidence inspection.
+
+https://github.com/user-attachments/assets/95448cba-69fa-42a7-b9db-5268cfe3423e
 
 ## More than a basic RAG chatbot
 
