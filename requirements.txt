@@ -1,7 +1,7 @@
 # Portable CPython 3.11 application contract for local desktop use.
 # The Linux/amd64 container has a separate contract in requirements-app.txt.
 torch==2.10.0
-gradio==6.5.1
+gradio==6.15.1
 groq==0.37.1
 python-dotenv==1.2.1
 langchain==0.2.12
