@@ -101,7 +101,7 @@ orjson==3.11.7
 overrides==7.7.0
 packaging==24.2
 pandas==3.0.0
-pillow==12.1.0
+pillow==13.0.0
 pip==26.0.1
 posthog==5.4.0
 preshed==3.0.12
