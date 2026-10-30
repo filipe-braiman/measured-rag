@@ -3,7 +3,7 @@
 # closure separately. Docker installs Torch from its CPU-only index first.
 # The explicit +cpu pin prevents a later resolver from replacing it with CUDA.
 -c constraints-app.txt
-torch==2.10.0+cpu
+torch==2.13.0
 gradio==6.5.1
 groq==0.37.1
 python-dotenv==1.2.1
