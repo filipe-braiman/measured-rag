@@ -29,7 +29,7 @@ chromadb==1.5.0
 click==8.3.1
 cloudpathlib==0.23.0
 confection==0.1.5
-cryptography==46.0.5
+cryptography==50.0.0
 cymem==2.0.13
 dataclasses-json==0.6.7
 distro==1.9.0
